@@ -43,6 +43,10 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var deleteViewImageView: UIImageView!
     
+    /// Set tis property to true if you want to change buttons' images to custom.
+    /// You should provide images for all buttons
+    public var customImagesMode = false
+    
     public var cancelButtonImage: UIImage?
     public var cropButtonImage: UIImage?
     public var stickerButtonImage: UIImage?
@@ -155,15 +159,35 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func configureButtonsImages() {
+        if customImagesMode == false { return }
+                
         cancelButton.setImage(cancelButtonImage, for: .normal)
+        cancelButton.setTitle("", for: .normal)
+        
         cropButton.setImage(cropButtonImage, for: .normal)
+        cropButton.setTitle("", for: .normal)
+        
         stickerButton.setImage(stickerButtonImage, for: .normal)
+        stickerButton.setTitle("", for: .normal)
+        
         drawButton.setImage(drawButtonImage, for: .normal)
+        drawButton.setTitle("", for: .normal)
+        
         textButton.setImage(textButtonImage, for: .normal)
+        textButton.setTitle("", for: .normal)
+        
         saveButton.setImage(saveButtonImage, for: .normal)
+        saveButton.setTitle("", for: .normal)
+        
         shareButton.setImage(shareButtonImage, for: .normal)
+        shareButton.setTitle("", for: .normal)
+        
         clearButton.setImage(clearButtonImage, for: .normal)
+        clearButton.setTitle("", for: .normal)
+        
         continueButton.setImage(continueButtonImage, for: .normal)
+        continueButton.setTitle("", for: .normal)
+        
         deleteViewImageView.image = deleteViewImage
     }
 }
