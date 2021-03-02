@@ -31,6 +31,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     
     //Controls
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var cropButton: UIButton!
     @IBOutlet weak var stickerButton: UIButton!
     @IBOutlet weak var drawButton: UIButton!
@@ -38,6 +39,20 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    @IBOutlet weak var deleteViewImageView: UIImageView!
+    
+    public var cancelButtonImage: UIImage?
+    public var cropButtonImage: UIImage?
+    public var stickerButtonImage: UIImage?
+    public var drawButtonImage: UIImage?
+    public var textButtonImage: UIImage?
+    public var saveButtonImage: UIImage?
+    public var shareButtonImage: UIImage?
+    public var clearButtonImage: UIImage?
+    public var continueButtonImage: UIImage?
+    public var deleteViewImage: UIImage?
     
     public var image: UIImage?
     /**
@@ -103,6 +118,7 @@ public final class PhotoEditorViewController: UIViewController {
         configureCollectionView()
         stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
+        configureButtonsImages()
     }
     
     func configureCollectionView() {
@@ -136,6 +152,19 @@ public final class PhotoEditorViewController: UIViewController {
         topGradient.isHidden = hide
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
+    }
+    
+    func configureButtonsImages() {
+        cancelButton.setImage(cancelButtonImage, for: .normal)
+        cropButton.setImage(cropButtonImage, for: .normal)
+        stickerButton.setImage(stickerButtonImage, for: .normal)
+        drawButton.setImage(drawButtonImage, for: .normal)
+        textButton.setImage(textButtonImage, for: .normal)
+        saveButton.setImage(saveButtonImage, for: .normal)
+        shareButton.setImage(shareButtonImage, for: .normal)
+        clearButton.setImage(clearButtonImage, for: .normal)
+        continueButton.setImage(continueButtonImage, for: .normal)
+        deleteViewImageView.image = deleteViewImage
     }
 }
 
