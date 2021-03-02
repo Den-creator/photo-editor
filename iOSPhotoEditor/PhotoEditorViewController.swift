@@ -56,7 +56,6 @@ public final class PhotoEditorViewController: UIViewController {
     public var shareButtonImage: UIImage?
     public var clearButtonImage: UIImage?
     public var continueButtonImage: UIImage?
-    public var deleteViewImage: UIImage?
     
     public var image: UIImage?
     /**
@@ -186,9 +185,7 @@ public final class PhotoEditorViewController: UIViewController {
         clearButton.setTitle("", for: .normal)
         
         continueButton.setImage(continueButtonImage, for: .normal)
-        continueButton.setTitle("", for: .normal)
-        
-        deleteViewImageView.image = deleteViewImage
+        continueButton.setTitle("", for: .normal)        
     }
 }
 
